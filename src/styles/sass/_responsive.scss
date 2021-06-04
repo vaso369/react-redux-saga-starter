@@ -1,0 +1,27 @@
+@media (min-width: 1025px) {
+  .layout-wrapper {
+    &.layout-overlay {
+      .layout-main {
+        margin-left: 0;
+      }
+    }
+
+    &.layout-static {
+      .layout-main {
+        margin-left: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout-wrapper {
+    .layout-main {
+      margin-left: 0;
+    }
+  }
+
+  .body-overflow-hidden {
+    overflow: hidden;
+  }
+}

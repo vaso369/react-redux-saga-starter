@@ -1,0 +1,105 @@
+@mixin breakpoint($min: 0, $max: 0) {
+    $type: type-of($min);
+    @if $type == number b {
+      $query: 'all' !default;
+      @if $min != 0 and $max != 0 {
+        $query: '(min-device-width: #{$min}) and (max-device-width: #{$max})';
+      } @else if $min != 0 and $max == 0 {
+        $query: '(min-device-width: #{$min})';
+      } @else if $min == 0 and $max != 0 {
+        $query: '(max-device-width: #{$max})';
+      }
+      @media #{$query} {
+        @content;
+      }
+    }
+  }
+  
+  @mixin flex-center($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+  }
+  
+  @mixin flex($justify, $align: false, $direction: false) {
+    display: flex !important;
+    justify-content: $justify !important;
+    @if $align {
+      align-items: $align !important;
+    }
+    @if $direction {
+      flex-direction: $direction !important;
+    }
+  }
+  
+  @mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  
+  @mixin font($size, $weight: false) {
+    font-size: $size !important;
+    @if $weight {
+      font-weight: $weight !important;
+    }
+  }
+  
+  @mixin darkTheme() {
+    .dark-theme & {
+      @content;
+    }
+  }
+  
+  @mixin lightTheme() {
+    .light-theme & {
+      @content;
+    }
+  }
+
+
+  // sigma
+
+  @mixin icon-override($icon) {
+    &:before {
+        content: $icon;
+    }
+}
+
+@mixin linear-gradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin linear-gradient-left($left, $right){
+    background: $left; /* Old browsers */
+    background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin focused() {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2em $focusShadowColor;
+}
+
+@mixin focused-inset() {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 0.2em $focusShadowColor;
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

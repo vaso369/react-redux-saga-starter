@@ -1,0 +1,264 @@
+@import './_variables';
+@import './sass/_layout';
+@import './_overrides';
+
+.p-datatable .p-datatable-tbody > tr > td {
+  // border: 1px solid #ddd;
+  
+  // div > p {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow:ellipsis !important;
+    width: 100% !important;
+  // }
+  
+}
+
+.p-galleria-close {
+  display: none;
+}
+
+.p-galleria-mask.p-component-overlay {
+  background-color: transparent;
+}
+
+.p-button {
+  color: #ffffff;
+  background: $primaryGreen;
+  border: 1px solid $primaryGreen;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 0 !important;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 3px;
+  &:hover {
+    background: darken($primaryGreen, 10%) !important;
+    border: 0 !important;
+    color: #fff !important;
+  }
+  &.p-button-text {
+    color: $primaryGreen;
+  }
+}
+
+.p-multiselect.levels-input {
+  padding: 0.1rem 0 !important;
+  margin-top: 0.3rem !important;
+}
+
+label {
+  color: #2e2e2e !important;
+}
+
+// input {
+//     &:focus {
+
+//     }
+
+// }
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner-animation {
+  animation: spinner .6s linear infinite;
+}
+
+.p-button {
+  webkit-clip-path: polygon(
+    100% 0%,
+    0% 0%,
+    0% 7%,
+    0% 84%,
+    7% 91%,
+    42% 91%,
+    49% 95%,
+    100% 95%
+  );
+  clip-path: polygon(
+    100% 0%,
+    0% 0%,
+    0% 7%,
+    0% 84%,
+    7% 91%,
+    42% 91%,
+    49% 95%,
+    100% 95%
+  );
+}
+
+.p-inputtext {
+  &:enabled:hover {
+    border-color: $primaryGreen;
+  }
+  &:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem $primaryGreen;
+    border-color: $primaryGreen;
+  }
+}
+
+.p-slider .p-slider-range {
+  background: $primaryGreen;
+}
+
+.p-slider .p-slider-handle {
+  background: $primaryGreen;
+  border: 2px solid $primaryGreen;
+}
+
+.p-slider:not(.p-disabled) .p-slider-handle:hover {
+  background: $primaryGreen;
+  border-color: $primaryGreen;
+}
+
+.p-slider .p-slider-handle:focus {
+  box-shadow: 0 0 0 0.2rem $primaryGreen;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: $primaryGreen;
+  background: $primaryGreen;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  border-color: darken($primaryGreen, 10%);
+  background: darken($primaryGreen, 10%);
+}
+
+.p-multiselect:not(.p-disabled):hover {
+  border-color: $primaryGreen;
+}
+
+.p-multiselect:not(.p-disabled).p-focus {
+  box-shadow: 0 0 0 0.2rem $primaryGreen;
+  border-color: $primaryGreen;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+  border-color: $primaryGreen;
+}
+
+/* Disable outline when link is focused */
+.p-link:focus {
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* hover color AppTopbar component */
+.layout-topbar .p-link:hover {
+  color: #fff !important;
+}
+
+/* Bold text on avatar without image */
+.p-avatar-text {
+  font-weight: bold !important;
+}
+
+/* style is applied for component AppTopbar */
+.layout-topbar {
+  padding: 0 32px !important;
+  padding: 0 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* style is applied for component AppTopbar */
+.layout-topbar .layout-topbar-icons {
+  margin-left: auto !important;
+}
+
+@media only screen and (max-width: 767px) {
+  /* For mobile phones: */
+  .layout-topbar-icons {
+    flex-grow: 1;
+  }
+  a > .layout-topbar-item-text {
+    display: none !important;
+  }
+
+  .layout-topbar .layout-topbar-icons {
+    justify-content: flex-end !important;
+  }
+
+  .layout-topbar-icons > .nav {
+    margin-left: 1rem !important;
+    max-width: fit-content;
+  }
+}
+
+// Datatable
+
+.datatable-responsive-demo
+  .p-datatable-responsive-demo
+  .p-datatable-tbody
+  > tr
+  > td
+  .p-column-title {
+  display: none;
+}
+
+@media screen and (max-width: 40em) {
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-thead
+    > tr
+    > th,
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tfoot
+    > tr
+    > td {
+    display: none !important;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td {
+    text-align: left;
+    display: block;
+    width: 100%;
+    float: left;
+    clear: left;
+    border: 0 none;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td
+    .p-column-title {
+    padding: 0.4rem;
+    min-width: 30%;
+    display: inline-block;
+    margin: -0.4em 1em -0.4em -0.4rem;
+    font-weight: bold;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td:last-child {
+    border-bottom: 1px solid var(--surface-d);
+  }
+}
+
+//toast
+// .p-toast-item {
+//   background: darken($primaryGreen, 12%) !important;
+// }
+.p-toast .p-toast-message.p-toast-message-success {
+  background: darken($primaryGreen, 12%);
+  border: solid lighten($primaryGreen, 2%);
+  border-width: 0 0 0 6px;
+  color: #fff;
+}
